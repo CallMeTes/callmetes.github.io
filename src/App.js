@@ -1,23 +1,21 @@
+import React from "react";
 import logo from './tesfa.jpg';
 import './App.css';
+import Home from './Home';
+import About from './About';
+import Projects from './Projects';
+import Contact from './Contact';
+import { Route, Link } from "react-router-dom";
+import NavBar from "./NavBar";
 
 function App() {
-  return (
+  return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        My name is <i>Tesfa</i> and I'm going to <b>MASTER</b> React!
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/CallMeTes"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Check Me Out!
-        </a>
-      </header>
+      <NavBar />
+      <Route exact path="/" component={Home} />
+      <Route exact path="/about" component={About} />
+      <Route exact path="/projects" component={Projects} />
+      <Route exact path="/contact" component={Contact} />
     </div>
   );
 }
